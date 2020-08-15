@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: cn.huanzi.qch.springbootmybatis.droneTest.droneInfoMapperTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.921 s <<< FAILURE! - in cn.huanzi.qch.springbootmybatis.droneTest.droneInfoMapperTest
-findUserById(cn.huanzi.qch.springbootmybatis.droneTest.droneInfoMapperTest)  Time elapsed: 1.758 s  <<< ERROR!
-java.lang.NullPointerException
-	at cn.huanzi.qch.springbootmybatis.droneTest.droneInfoMapperTest.findUserById(droneInfoMapperTest.java:30)
-
