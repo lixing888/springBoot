@@ -11,6 +11,7 @@
         也可在javabean 加上注解@Alias 来自定义别名， 例如： @Alias(user)
         <package name="com.dy.entity"/>
          -->
+        <typeAlias alias="wifiInfo" type="cn.huanzi.qch.springbootmybatis.pojo.WifiInfo"/>
         <typeAlias alias="droneInfo" type="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo"/>
     </typeAliases>
 

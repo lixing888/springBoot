@@ -40,5 +40,5 @@ public interface WifiInfoService {
      * @param size
      * @return
      */
-    PageInfo<WifiInfo> selectAllPageHelper(@RequestParam("page") Integer page, @RequestParam("size") Integer size);
+    PageInfo<WifiInfo> selectAllPageHelper(Integer page,Integer size,String name,Integer status);
 }

@@ -4,6 +4,7 @@ cn\huanzi\qch\springbootmybatis\pojo\DroneInfo.class
 cn\huanzi\qch\springbootmybatis\service\impl\UserServiceImpl.class
 cn\huanzi\qch\springbootmybatis\service\impl\WifiInfoServiceImpl.class
 cn\huanzi\qch\springbootmybatis\controller\WifiInfoController.class
+cn\huanzi\qch\springbootmybatis\enums\ResponseCodeEnum.class
 cn\huanzi\qch\springbootmybatis\mapper\DroneInfoMapper.class
 cn\huanzi\qch\springbootmybatis\service\impl\DroneInfoServiceImpl.class
 cn\huanzi\qch\springbootmybatis\mapper\UserMapper.class

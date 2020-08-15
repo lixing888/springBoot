@@ -1,5 +1,6 @@
 package cn.huanzi.qch.springbootmybatis.service.impl;
 
+import cn.huanzi.qch.springbootmybatis.enums.ResponseCodeEnum;
 import cn.huanzi.qch.springbootmybatis.mapper.DroneInfoMapper;
 import cn.huanzi.qch.springbootmybatis.mapper.WifiInfoMapper;
 import cn.huanzi.qch.springbootmybatis.pojo.DroneInfo;
@@ -33,22 +34,48 @@ public class DroneInfoServiceImpl implements DroneInfoService {
         droneInfo.setId(UUID.randomUUID().toString());
         droneInfo.setCreatedTime(new Date());
         droneInfo.setDeletedTime(null);
+        //唯一性校验
+        List<DroneInfo> list = droneInfoMapper.select(droneInfo.getName(), null);
+        if (list.size() > 0) {
+            return Result.build(ResponseCodeEnum.REPEAT.getCode(), ResponseCodeEnum.REPEAT.getMsg(), list.get(0));
+        }
         int i = droneInfoMapper.insert(droneInfo);
         if (i > 0) {
-            return Result.build(200, "操作成功！", droneInfo);
+            return Result.build(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMsg(), droneInfo);
         } else {
-            return Result.build(400, "操作失败！", null);
+            return Result.build(ResponseCodeEnum.ERROR.getCode(), ResponseCodeEnum.ERROR.getMsg(), null);
         }
     }
 
     @Override
     public Result delete(DroneInfo droneInfo) {
-        return null;
+        try {
+            int i = droneInfoMapper.delete(droneInfo);
+            if (i > 0) {
+                return Result.build(ResponseCodeEnum.SUCCESS.getCode(), "操作成功！", null);
+            } else {
+                return Result.build(ResponseCodeEnum.ERROR.getCode(), "操作失败！", null);
+            }
+        } catch (Exception e) {
+            return Result.build(ResponseCodeEnum.ERROR.getCode(), "操作失败！", e.toString());
+        }
+
     }
 
     @Override
     public Result update(DroneInfo droneInfo) {
-        return null;
+        try {
+            int i = droneInfoMapper.update(droneInfo);
+            if (i > 0) {
+                return Result.build(ResponseCodeEnum.SUCCESS.getCode(), "操作成功！", null);
+            } else {
+                return Result.build(ResponseCodeEnum.ERROR.getCode(), "操作失败！", null);
+            }
+        } catch (Exception e) {
+            return Result.build(ResponseCodeEnum.ERROR.getCode(), "操作失败！", e.toString());
+
+        }
+
     }
 
     @Override

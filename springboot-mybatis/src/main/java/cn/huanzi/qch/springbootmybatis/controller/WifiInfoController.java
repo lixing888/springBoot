@@ -52,9 +52,11 @@ public class WifiInfoController {
      * @return
      */
     @RequestMapping(value = "/selectAllPageHelper", method = RequestMethod.GET)
-    public Result selectAllPageHelper(@RequestParam("page") Integer page, @RequestParam("size") Integer size) {
+    public Result selectAllPageHelper(@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
+                                      @RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
+                                      @Param("name") String name, @Param("status") Integer status) {
         Result response = new Result();
-        PageInfo<WifiInfo> pageInfo = wifiInfoService.selectAllPageHelper(page, size);
+        PageInfo<WifiInfo> pageInfo = wifiInfoService.selectAllPageHelper(page, size, name, status);
         Map<String, Object> data = new HashMap<>();
         data.put("result", pageInfo);
         response.setMessage("查询成功");

@@ -51,10 +51,10 @@ public class WifiInfoServiceImpl implements WifiInfoService {
     }
 
     @Override
-    public PageInfo<WifiInfo> selectAllPageHelper(Integer page, Integer size) {
+    public PageInfo<WifiInfo> selectAllPageHelper(Integer page, Integer size, String name, Integer status) {
         // 开启分页插件,放在查询语句上面 帮助生成分页语句
         PageHelper.startPage(page, size);
-        List<WifiInfo> wifiInfoList = wifiInfoMapper.select("", null);
+        List<WifiInfo> wifiInfoList = wifiInfoMapper.select(name, status);
         // 封装分页之后的数据  返回给客户端展示  PageInfo做了一些封装 作为一个类
         //PageInfo<WifiInfo> pageAttachMents = new PageInfo<>(wifiInfoList);
         return new PageInfo<>(wifiInfoList);

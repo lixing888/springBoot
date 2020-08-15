@@ -38,9 +38,6 @@ public interface DroneInfoService {
      * @param size
      * @return
      */
-    PageInfo<DroneInfo> selectAllPageHelper(@RequestParam("page") Integer page,
-                                            @RequestParam("size") Integer size,
-                                            @RequestParam("name") String name,
-                                            @Param("state") String state);
+    PageInfo<DroneInfo> selectAllPageHelper(Integer page, Integer size, String name, String state);
 
 }

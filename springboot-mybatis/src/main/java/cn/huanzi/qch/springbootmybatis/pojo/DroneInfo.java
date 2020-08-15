@@ -22,6 +22,8 @@ public class DroneInfo {
     private Integer whitelisted;
     @Ignore
     private Date createdTime;
+    @Ignore
+    private Date updateTime;
     private Date deletedTime;
     private Integer attacking;
     private String direction;

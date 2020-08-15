@@ -21,4 +21,8 @@ public interface DroneInfoMapper {
     List<DroneInfo> select(@Param("name") String name, @Param("state") String state);
 
     int insert(DroneInfo droneInfo);
+
+    int delete(DroneInfo droneInfo);
+
+    int update(DroneInfo droneInfo);
 }

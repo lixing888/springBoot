@@ -9,8 +9,8 @@
                     value(#{id},#{name},#{image},#{canAttack}, #{canTakeover},#{whitelisted})
     </insert>
 
-    <select id="select" parameterType="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo"
-            resultType="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo">
+    <select id="select" parameterType="droneInfo"
+            resultType="droneInfo">
         select * from drone_info where 1=1
         <if test="name != null and name != ''">
             and name = #{name}
@@ -19,5 +19,27 @@
             and state = #{state}
         </if>
     </select>
+
+    <delete id="delete" parameterType="droneInfo">
+        delete from drone_info where id = #{id}
+    </delete>
+
+    <update id="update" parameterType="droneInfo">
+        update drone_info set
+        <if test="name != null and name != ''">
+            name = #{name},
+        </if>
+        <if test="state != null and state != ''">
+            state = #{state},
+        </if>
+        <if test="canAttack != null and canAttack != ''">
+            can_attack = #{canAttack},
+        </if>
+        <if test="canTakeover != null and canTakeover != ''">
+            can_takeover = #{canTakeover},
+        </if>
+        update_time =now()
+        where id = #{id}
+    </update>
 
 </mapper>

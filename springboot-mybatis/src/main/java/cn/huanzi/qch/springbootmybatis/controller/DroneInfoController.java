@@ -57,8 +57,10 @@ public class DroneInfoController {
      * @return
      */
     @RequestMapping(value = "/selectAllPageHelper", method = RequestMethod.GET)
-    public Result selectAllPageHelper(@RequestParam("page") Integer page, @RequestParam("size") Integer size,
-                                      @RequestParam("name") String name, @Param("state") String state) {
+    public Result selectAllPageHelper(@RequestParam(value = "page", required = false, defaultValue = "1") Integer page,
+                                      @RequestParam(value = "size", required = false, defaultValue = "10") Integer size,
+                                      @RequestParam(value = "name", required = false, defaultValue = "") String name,
+                                      @Param("state") String state) {
         Result response = new Result();
         PageInfo<DroneInfo> pageInfo = droneInfoService.selectAllPageHelper(page, size, name, state);
         Map<String, Object> data = new HashMap<>();
