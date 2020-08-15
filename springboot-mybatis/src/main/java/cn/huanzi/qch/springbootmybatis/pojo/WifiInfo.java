@@ -1,8 +1,6 @@
 package cn.huanzi.qch.springbootmybatis.pojo;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.Date;
 
