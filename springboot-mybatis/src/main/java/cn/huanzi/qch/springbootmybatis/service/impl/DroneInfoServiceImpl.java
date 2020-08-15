@@ -11,10 +11,9 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @program: springboot-mybatis
@@ -31,7 +30,15 @@ public class DroneInfoServiceImpl implements DroneInfoService {
 
     @Override
     public Result insert(DroneInfo droneInfo) {
-        return null;
+        droneInfo.setId(UUID.randomUUID().toString());
+        droneInfo.setCreatedTime(new Date());
+        droneInfo.setDeletedTime(null);
+        int i = droneInfoMapper.insert(droneInfo);
+        if (i > 0) {
+            return Result.build(200, "操作成功！", droneInfo);
+        } else {
+            return Result.build(400, "操作失败！", null);
+        }
     }
 
     @Override

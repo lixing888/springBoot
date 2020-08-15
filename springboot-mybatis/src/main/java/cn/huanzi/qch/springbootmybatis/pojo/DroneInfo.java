@@ -1,5 +1,6 @@
 package cn.huanzi.qch.springbootmybatis.pojo;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import lombok.Data;
 
 import java.util.Date;
@@ -19,6 +20,7 @@ public class DroneInfo {
     private String canAttack;
     private Integer canTakeover;
     private Integer whitelisted;
+    @Ignore
     private Date createdTime;
     private Date deletedTime;
     private Integer attacking;

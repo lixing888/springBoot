@@ -8,10 +8,7 @@ import cn.huanzi.qch.springbootmybatis.service.WifiInfoService;
 import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,8 +28,8 @@ public class DroneInfoController {
     private DroneInfoService droneInfoService;
 
     //测试：http://localhost:10090/drone/insert?username=张三疯&password=111&created=2019-11-11 11:11:11
-    @RequestMapping("/insert")
-    public Result insert(DroneInfo droneInfo) {
+    @PostMapping("/insert")
+    public Result insert(@Param(value = "droneInfo") DroneInfo droneInfo) {
         return droneInfoService.insert(droneInfo);
     }
 
@@ -63,7 +60,7 @@ public class DroneInfoController {
     public Result selectAllPageHelper(@RequestParam("page") Integer page, @RequestParam("size") Integer size,
                                       @RequestParam("name") String name, @Param("state") String state) {
         Result response = new Result();
-        PageInfo<DroneInfo> pageInfo = droneInfoService.selectAllPageHelper(page, size, name,state);
+        PageInfo<DroneInfo> pageInfo = droneInfoService.selectAllPageHelper(page, size, name, state);
         Map<String, Object> data = new HashMap<>();
         data.put("result", pageInfo);
         response.setMessage("查询成功");
