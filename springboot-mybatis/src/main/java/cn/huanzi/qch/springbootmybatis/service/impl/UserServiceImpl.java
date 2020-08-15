@@ -1,8 +1,9 @@
-package cn.huanzi.qch.springbootmybatis.service;
+package cn.huanzi.qch.springbootmybatis.service.impl;
 
 import cn.huanzi.qch.springbootmybatis.mapper.UserMapper;
 import cn.huanzi.qch.springbootmybatis.pojo.Result;
 import cn.huanzi.qch.springbootmybatis.pojo.User;
+import cn.huanzi.qch.springbootmybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

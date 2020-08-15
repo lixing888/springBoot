@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.huanzi.qch.springbootmybatis.mapper.DroneInfoMapper">
+
+    <resultMap id="DroneInfo" type="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <id column="image" property="image" jdbcType="VARCHAR"/>
+        <id column="name" property="name" jdbcType="VARCHAR"/>
+        <id column="can_attack" property="canAttack" jdbcType="INTEGER"/>
+        <id column="state" property="state" jdbcType="VARCHAR"/>
+        <id column="can_takeover" property="canTakeover" jdbcType="INTEGER"/>
+
+        <id column="whitelisted" property="whitelisted" jdbcType="VARCHAR"/>
+        <id column="attacking" property="attacking" jdbcType="INTEGER"/>
+        <id column="direction" property="direction" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="select" parameterType="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo"
+            resultType="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo">
+        select * from drone_info where 1=1
+        <if test="name != null and name != ''">
+            and name = #{name}
+        </if>
+        <if test="state != null and state != ''">
+            and state = #{state}
+        </if>
+    </select>
+
+</mapper>

@@ -35,6 +35,7 @@ public interface WifiInfoService {
 
     /**
      * 分页查询
+     *
      * @param page
      * @param size
      * @return

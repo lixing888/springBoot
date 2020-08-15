@@ -43,7 +43,7 @@ public class WifiInfoController {
     //测试：http://localhost:8888/wifi/select?id=44
     @RequestMapping("/select")
     public Result select(@Param("name") String name, @Param("status") Integer status) {
-        return wifiInfoService.select(name,status);
+        return wifiInfoService.select(name, status);
     }
 
     /**

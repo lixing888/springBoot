@@ -1,9 +1,10 @@
-package cn.huanzi.qch.springbootmybatis.service;
+package cn.huanzi.qch.springbootmybatis.service.impl;
 
 import cn.huanzi.qch.springbootmybatis.mapper.WifiInfoMapper;
 import cn.huanzi.qch.springbootmybatis.pojo.Result;
 import cn.huanzi.qch.springbootmybatis.pojo.User;
 import cn.huanzi.qch.springbootmybatis.pojo.WifiInfo;
+import cn.huanzi.qch.springbootmybatis.service.WifiInfoService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Param;
