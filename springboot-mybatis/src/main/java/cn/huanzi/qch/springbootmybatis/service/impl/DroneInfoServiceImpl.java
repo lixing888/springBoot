@@ -39,12 +39,17 @@ public class DroneInfoServiceImpl implements DroneInfoService {
         if (list.size() > 0) {
             return Result.build(ResponseCodeEnum.REPEAT.getCode(), ResponseCodeEnum.REPEAT.getMsg(), list.get(0));
         }
-        int i = droneInfoMapper.insert(droneInfo);
-        if (i > 0) {
-            return Result.build(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMsg(), droneInfo);
-        } else {
-            return Result.build(ResponseCodeEnum.ERROR.getCode(), ResponseCodeEnum.ERROR.getMsg(), null);
+        try {
+            int i = droneInfoMapper.insert(droneInfo);
+            if (i > 0) {
+                return Result.build(ResponseCodeEnum.SUCCESS.getCode(), ResponseCodeEnum.SUCCESS.getMsg(), droneInfo);
+            } else {
+                return Result.build(ResponseCodeEnum.ERROR.getCode(), ResponseCodeEnum.ERROR.getMsg(), null);
+            }
+        } catch (Exception e) {
+            return Result.build(ResponseCodeEnum.ERROR.getCode(), ResponseCodeEnum.ERROR.getMsg(), e.toString());
         }
+
     }
 
     @Override

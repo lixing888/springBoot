@@ -5,8 +5,8 @@
 <mapper namespace="cn.huanzi.qch.springbootmybatis.mapper.DroneInfoMapper">
 
     <insert id="insert" parameterType="droneInfo">
-        insert into drone_info(id,name,image,can_attack,can_takeover,whitelisted)
-                    value(#{id},#{name},#{image},#{canAttack}, #{canTakeover},#{whitelisted})
+        insert into drone_info(id,name,image,state,can_attack,can_takeover,whitelisted,attacking,created_time)
+                    value(#{id},#{name},#{image},#{state},#{canAttack}, #{canTakeover},#{whitelisted},#{attacking},#{createdTime})
     </insert>
 
     <select id="select" parameterType="droneInfo"
