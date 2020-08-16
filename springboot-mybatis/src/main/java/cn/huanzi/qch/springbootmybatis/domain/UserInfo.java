@@ -18,6 +18,10 @@ public class UserInfo {
     private String name;
 
     private String passWord;
+
+    private Integer cardType;
+
+    private String cardId;
     @Ignore
     private Date createTime;
     @Ignore
