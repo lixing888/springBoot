@@ -67,7 +67,8 @@ public class DroneInfoController {
         data.put("result", pageInfo);
         response.setMessage("查询成功");
         response.setStatus(200);
-        response.setData(data);
+        //response.setData(data);
+        response.setResult(pageInfo);
         return response;
 
     }

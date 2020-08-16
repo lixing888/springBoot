@@ -9,15 +9,15 @@ public class Result {
 
     private Integer status;
 
-    private Object data;
+    private Object result;
 
     public Result() {
     }
 
-    public Result(String message, Integer status, Object data) {
+    public Result(String message, Integer status, Object result) {
         this.message = message;
         this.status = status;
-        this.data = data;
+        this.result = result;
     }
 
     public String getMessage() {
@@ -36,12 +36,12 @@ public class Result {
         this.status = status;
     }
 
-    public Object getData() {
-        return data;
+    public Object getResult() {
+        return result;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void setResult(Object result) {
+        this.result = result;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class Result {
         return "Result{" +
                 "message='" + message + '\'' +
                 ", status=" + status +
-                ", data=" + data +
+                ", result=" + result +
                 '}';
     }
 

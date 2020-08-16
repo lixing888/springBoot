@@ -9,8 +9,7 @@
                     value(#{id},#{name},#{image},#{state},#{canAttack}, #{canTakeover},#{whitelisted},#{attacking},#{createdTime})
     </insert>
 
-    <select id="select" parameterType="droneInfo"
-            resultType="droneInfo">
+    <select id="select" parameterType="droneInfo" resultType="droneInfo">
         select * from drone_info where 1=1
         <if test="name != null and name != ''">
             and name = #{name}

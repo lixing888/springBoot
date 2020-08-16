@@ -13,6 +13,7 @@
          -->
         <typeAlias alias="wifiInfo" type="cn.huanzi.qch.springbootmybatis.pojo.WifiInfo"/>
         <typeAlias alias="droneInfo" type="cn.huanzi.qch.springbootmybatis.pojo.DroneInfo"/>
+        <typeAlias alias="userInfo" type="cn.huanzi.qch.springbootmybatis.domain.UserInfo"/>
     </typeAliases>
 
 </configuration>
