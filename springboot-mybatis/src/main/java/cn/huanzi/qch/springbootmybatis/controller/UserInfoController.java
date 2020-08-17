@@ -5,6 +5,7 @@ import cn.huanzi.qch.springbootmybatis.enums.ResponseCodeEnum;
 import cn.huanzi.qch.springbootmybatis.pojo.DroneInfo;
 import cn.huanzi.qch.springbootmybatis.pojo.Result;
 import cn.huanzi.qch.springbootmybatis.service.UserInfoService;
+import cn.hutool.http.HttpUtil;
 import com.github.pagehelper.PageInfo;
 import lombok.val;
 import org.apache.ibatis.annotations.Param;
