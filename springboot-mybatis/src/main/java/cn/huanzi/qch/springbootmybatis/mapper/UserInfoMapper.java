@@ -16,8 +16,11 @@ import java.util.List;
 @Component(value = "UserInfoMapper")
 public interface UserInfoMapper {
 
-    List<UserInfo> selectUserList();
+    List<UserInfo> selectUserList(Integer cardType, String cardId, String name);
 
     UserInfo getUserById(Integer id);
 
+    int insert(UserInfo userInfo);
+
+    int update(UserInfo userInfo);
 }

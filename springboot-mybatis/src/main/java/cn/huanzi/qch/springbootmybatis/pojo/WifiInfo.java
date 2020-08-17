@@ -19,7 +19,9 @@ public class WifiInfo {
 
     private String ssid;
 
-    private Date created;
+    private Date createTime;
+
+    private String creatorId;
 
 
 }

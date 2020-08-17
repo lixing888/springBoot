@@ -13,7 +13,7 @@ import java.util.Date;
  **/
 @Data
 public class UserInfo {
-    private Integer id;
+    private String id;
 
     private String name;
 
@@ -28,5 +28,7 @@ public class UserInfo {
     private Date updateTime;
 
     private String creatorId;
+
+    private String phone;
 
 }

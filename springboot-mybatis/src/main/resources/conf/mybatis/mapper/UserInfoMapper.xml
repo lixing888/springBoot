@@ -5,21 +5,59 @@
 <mapper namespace="cn.huanzi.qch.springbootmybatis.mapper.UserInfoMapper">
 
     <resultMap type="userInfo" id="userResult">
-        <id property="id" column="id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="VARCHAR"/>
         <id property="passWord" column="pass_word" jdbcType="VARCHAR"/>
         <id property="cardType" column="card_type" jdbcType="VARCHAR"/>
         <id property="cardId" column="card_id" jdbcType="VARCHAR"/>
         <id property="createTime" column="create_time" jdbcType="DATE"/>
         <id property="updateTime" column="update_time" jdbcType="DATE"/>
         <id property="creatorId" column="creator_id" jdbcType="VARCHAR"/>
+        <id property="phone" column="phone" jdbcType="VARCHAR"/>
     </resultMap>
+
+    <insert id="insert" parameterType="userInfo">
+        insert into user_info(id,name,pass_word,card_type,card_id,phone,create_time,update_time,creator_id)
+                    value(#{id},#{name},#{passWord},#{cardType},#{cardId}, #{phone},#{createTime},#{updateTime},#{creatorId})
+    </insert>
 
     <select id="selectUserList" parameterType="userInfo" resultMap="userResult">
         select * from user_info where 1=1
+        <if test="name != null and name != ''">
+            and name = #{name}
+        </if>
+        <if test="cardType != null and cardType != ''">
+            and card_type = #{cardType}
+        </if>
+        <if test="cardId != null and cardId != ''">
+            and card_id = #{cardId}
+        </if>
     </select>
 
     <select id="getUserById" parameterType="userInfo" resultMap="userResult">
         select * from user_info where id = #{id}
     </select>
+
+    <update id="update" parameterType="userInfo">
+        update user_info set
+        <if test="name != null and name != ''">
+            name = #{name},
+        </if>
+        <if test="passWord != null and passWord != ''">
+            pass_word = #{passWord},
+        </if>
+        <if test="cardType != null and cardType != ''">
+            card_type = #{cardType},
+        </if>
+        <if test="cardId != null and cardId != ''">
+            card_id = #{cardId},
+        </if>
+        update_time =now()
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="userInfo">
+        delete from user_info where id = #{id}
+    </delete>
+
 
 </mapper>

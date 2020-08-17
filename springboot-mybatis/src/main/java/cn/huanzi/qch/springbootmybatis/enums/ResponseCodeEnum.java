@@ -12,6 +12,7 @@ public enum ResponseCodeEnum {
 
     SUCCESS(200, "操作成功"),
     REPEAT(300, "数据已存在！请勿重复添加。"),
+    NODATA(301, "未查询到数据！"),
     ERROR(500, "操作失败");
     private int code;
 
