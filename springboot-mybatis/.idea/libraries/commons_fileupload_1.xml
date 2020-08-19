@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="commons-fileupload-1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../commons-fileupload-1.4-bin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../commons-fileupload-1.4-bin" recursive="false" />
+  </library>
+</component>
