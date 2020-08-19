@@ -2,6 +2,7 @@
   <library name="commons-fileupload-1.4-javadoc">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../commons-fileupload-1.4-bin/commons-fileupload-1.4-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../commons-fileupload-1.4-bin/commons-fileupload-1.4.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../../commons-fileupload-1.4-bin/commons-fileupload-1.4-javadoc.jar!/" />
